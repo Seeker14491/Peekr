@@ -1,0 +1,11 @@
+[package]
+name = "peekr-core"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+az = "1"
+bytemuck = "1"
+parking_lot = "0.11"
+serde = { version = "1", features = ["derive"] }
+tap = "1"
