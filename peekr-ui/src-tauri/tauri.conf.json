@@ -26,7 +26,7 @@
       "copyright": "",
       "category": "Utility",
       "shortDescription": "Real-time information display for Distance",
-      "longDescription": "",
+      "longDescription": "Real-time information display for Distance",
       "deb": {
         "depends": [],
         "useBootstrapper": false

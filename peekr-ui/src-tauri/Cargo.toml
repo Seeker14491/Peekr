@@ -1,7 +1,7 @@
 [package]
 name = "peekr"
 version = "0.1.0"
-description = "A Tauri App"
+description = "Real-time Information display app for Distance"
 authors = ["you"]
 license = ""
 repository = ""
