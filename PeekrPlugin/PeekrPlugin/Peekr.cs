@@ -42,10 +42,12 @@ namespace PeekrPlugin
                 return null;
             }
 
+            var jumpEffect = Traverse.Create(carLogic.Jump_).Field("jumpEffect_");
             return new TelemetryMessage
             {
                 CarDirectivesBits = carLogic.CarDirectives_.Bits_,
-                JumpTimer = Traverse.Create(carLogic.Jump_).Field("jumpTimer_").GetValue<float>(),
+                JumpTimer = jumpEffect.Field("fadeTime_").GetValue<float>() -
+                            jumpEffect.Field("fadeTimer_").GetValue<float>(),
                 WingsOpen = carLogic.Wings_.WingsOpen_,
             };
         }
