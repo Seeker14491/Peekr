@@ -13,7 +13,7 @@ import { DigitalIndicator } from "./DigitalIndicator";
 import * as React from "react";
 
 export const DirectivesDisplay = ({ telemetry }: { telemetry: Telemetry }) => (
-  <HStack p={2}>
+  <HStack p={4}>
     <ControlStick
       x={telemetry.CarDirectives.steer}
       y={telemetry.WingsOpen ? -telemetry.CarDirectives.rotationX : 0}

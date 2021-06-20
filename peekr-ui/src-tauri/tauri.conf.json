@@ -49,14 +49,17 @@
       "active": false
     },
     "allowlist": {
-      "all": false
+      "all": false,
+      "window": {
+        "all": true
+      }
     },
     "windows": [
       {
         "title": "Peekr",
-        "width": 500,
-        "height": 400,
-        "resizable": true,
+        "width": 800,
+        "height": 600,
+        "resizable": false,
         "fullscreen": false
       }
     ],

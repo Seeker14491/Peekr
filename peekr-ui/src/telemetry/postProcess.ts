@@ -8,8 +8,9 @@ export const postProcessTelemetry = async (
   const carDirectivesDecoded = await decodeCarDirectives(
     rawTelemetry.CarDirectivesBits
   );
-  delete rawTelemetry.CarDirectivesBits;
-  const telemetry: Telemetry = rawTelemetry as any;
+  const tmp = rawTelemetry as any;
+  delete tmp.CarDirectivesBits;
+  const telemetry: Telemetry = tmp;
   telemetry.CarDirectives = carDirectivesDecoded;
 
   return telemetry;

@@ -9,7 +9,7 @@ export const DigitalIndicator = ({
   text: string;
   state: boolean;
 }) => {
-  const bgColor = state ? theme.colors.gray[600] : null;
+  const bgColor = state ? theme.colors.gray[600] : undefined;
 
   return (
     <Text
