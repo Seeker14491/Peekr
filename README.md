@@ -2,6 +2,12 @@
 
 Real-time Information display app for [Distance](http://survivethedistance.com/).
 
+![screenshot](screenshot.png)
+
+Unlike simple input viewers, it also works when viewing replays, or when spectating other players in multiplayer. Note that, due to the way the game represents the data internally, the data shown will differ from the actual player inputs in several ways.
+
+For the app to work, it requires a plugin to be installed in Distance.
+
 ## Download
 
 **Prerequisite on Windows:** [WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703)
@@ -48,3 +54,7 @@ yarn tauri build
 ```
 
 The build output will be in the `peekr-ui/src-tauri/target/release` directory.
+
+## Credits
+
+The layout was inspired by the [Distplay](https://github.com/Californ1a/distplay) input viewer.
