@@ -2,15 +2,23 @@
 
 Real-time Information display app for [Distance](http://survivethedistance.com/).
 
+## Download
+
+**Prerequisite on Windows:** [WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703)
+
+Download the latest version from [the releases page](https://github.com/Seeker14491/Peekr/releases). Only a Windows x64 build is provided for now, though the code is cross-platform.
+
 ## Usage
 
 To get the plugin working you'll first need to get the BepInEx modding framework installed in Distance ([instructions](https://docs.bepinex.dev/master/articles/user_guide/installation/index.html)). Note that [Centrifuge](https://github.com/Ciastex/Centrifuge) conflicts with BepInEx. [Spectrum](https://github.com/Ciastex/Spectrum), however, works fine alongside BepInEx.
 
-Install the plugin by placing it in the `Distance/BepInEx/plugins/` directory. Your directory structure should end up looking like `Distance/BepInEx/plugins/PeekrPlugin/PeekrPlugin.dll`.
+Install the plugin by placing the `PeekrPlugin` directory inside the `Distance/BepInEx/plugins/` directory, such that your directory structure ends up looking like `Distance/BepInEx/plugins/PeekrPlugin/PeekrPlugin.dll`.
 
 The plugin can be configured by editing the configuration file `Distance/BepInEx/config/pw.seekr.plugins.peekr.cfg`, which will be generated after running the game with the plugin installed.
 
 Once the plugin is installed you can run the app which will show data once you're in-game.
+
+**Note:** If the app just closes shortly after opening it, and you're on Windows, you're probably missing the prerequisite linked in the download section above.
 
 ## Architecture
 
@@ -25,7 +33,7 @@ Before building the plugin, you'll need to copy these dll files from your game f
 - `BepInEx/core/0Harmony.dll`
 - `BepInEx/core/BepInEx.dll`
 
-The plugin can then be built by builing the solution in the `PeekrPlugin` folder.
+The plugin can then be built by building the solution in the `PeekrPlugin` folder.
 
 ## Building the UI
 
