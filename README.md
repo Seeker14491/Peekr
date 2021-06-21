@@ -10,7 +10,9 @@ Download the latest version from [the releases page](https://github.com/Seeker14
 
 ## Usage
 
-To get the plugin working you'll first need to get the BepInEx modding framework installed in Distance ([instructions](https://docs.bepinex.dev/master/articles/user_guide/installation/index.html)). Note that [Centrifuge](https://github.com/Ciastex/Centrifuge) conflicts with BepInEx. [Spectrum](https://github.com/Ciastex/Spectrum), however, works fine alongside BepInEx.
+To get the plugin working you'll first need to get the BepInEx modding framework installed in Distance. On Windows, you just download the latest version from the [BepInEx release page](https://github.com/BepInEx/BepInEx/releases), specifically the file with a name like `BepInEx_x86_x.x.x.x.zip`, and then extract the contents of the zip next to `Distance.exe` in your game install directory. Refer to ([the docs](https://docs.bepinex.dev/master/articles/user_guide/installation/index.html)) if you need clarification, or for other platforms.
+
+Note that [Centrifuge](https://github.com/Ciastex/Centrifuge) conflicts with BepInEx. If you experience issues getting BepInEx working, it might be due to some files left from a previous Centrifuge install. To fix this, delete the `Distance_Data/Managed` folder from your game directory, then verify the game through Steam. [Spectrum](https://github.com/Ciastex/Spectrum), works fine alongside BepInEx.
 
 Install the plugin by placing the `PeekrPlugin` directory inside the `Distance/BepInEx/plugins/` directory, such that your directory structure ends up looking like `Distance/BepInEx/plugins/PeekrPlugin/PeekrPlugin.dll`.
 
