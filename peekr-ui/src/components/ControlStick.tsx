@@ -13,23 +13,22 @@ export const ControlStick = ({ x, y }: { x: number; y: number }) => {
   ];
 
   return (
-    <>
+    <Box
+      w={`${backdropSize}px`}
+      h={`${backdropSize}px`}
+      borderRadius="100%"
+      bgColor="gray.700"
+      m={1}
+    >
       <Box
-        w={`${backdropSize}px`}
-        h={`${backdropSize}px`}
+        w={`${stickSize}px`}
+        h={`${stickSize}px`}
+        position="relative"
+        left={`${stickOffsets[0]}px`}
+        top={`${stickOffsets[1]}px`}
         borderRadius="100%"
-        bgColor="gray.700"
-      >
-        <Box
-          w={`${stickSize}px`}
-          h={`${stickSize}px`}
-          position="relative"
-          left={`${stickOffsets[0]}px`}
-          top={`${stickOffsets[1]}px`}
-          borderRadius="100%"
-          bgColor="gray.500"
-        />
-      </Box>
-    </>
+        bgColor="gray.500"
+      />
+    </Box>
   );
 };

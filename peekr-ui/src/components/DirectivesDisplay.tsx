@@ -1,6 +1,7 @@
 import { Telemetry } from "../telemetry/telemetry";
 import { ControlStick } from "./ControlStick";
 import {
+  Box,
   Grid,
   HStack,
   Slider,
@@ -13,7 +14,7 @@ import { DigitalIndicator } from "./DigitalIndicator";
 import * as React from "react";
 
 export const DirectivesDisplay = ({ telemetry }: { telemetry: Telemetry }) => (
-  <HStack p={4} alignItems="stretch">
+  <HStack p={3} alignItems="center">
     <ControlStick
       x={telemetry.CarDirectives.steer}
       y={telemetry.WingsOpen ? -telemetry.CarDirectives.rotationX : 0}
@@ -40,22 +41,24 @@ export const DirectivesDisplay = ({ telemetry }: { telemetry: Telemetry }) => (
         </Slider>
       </HStack>
     </VStack>
-    <VStack>
-      <Text fontSize="sm">Gas:</Text>
-      <Slider
-        orientation="vertical"
-        size="lg"
-        isReadOnly={true}
-        focusThumbOnChange={false}
-        min={-1}
-        max={1}
-        value={telemetry.CarDirectives.gas}
-      >
-        <SliderTrack>
-          <SliderFilledTrack />
-        </SliderTrack>
-      </Slider>
-    </VStack>
+    <Box alignSelf="stretch">
+      <VStack h="100%">
+        <Text fontSize="sm">Gas:</Text>
+        <Slider
+          orientation="vertical"
+          size="lg"
+          isReadOnly={true}
+          focusThumbOnChange={false}
+          min={-1}
+          max={1}
+          value={telemetry.CarDirectives.gas}
+        >
+          <SliderTrack>
+            <SliderFilledTrack />
+          </SliderTrack>
+        </Slider>
+      </VStack>
+    </Box>
     <ControlStick
       x={
         telemetry.WingsOpen
