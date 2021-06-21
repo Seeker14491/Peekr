@@ -29,6 +29,7 @@ export const DirectivesDisplay = ({ telemetry }: { telemetry: Telemetry }) => (
       <HStack>
         <Text fontSize="sm">Brake:</Text>
         <Slider
+          transform="scaleY(3)"
           size="lg"
           isReadOnly={true}
           focusThumbOnChange={false}
@@ -42,36 +43,36 @@ export const DirectivesDisplay = ({ telemetry }: { telemetry: Telemetry }) => (
       </HStack>
     </VStack>
     <Box alignSelf="stretch">
-      <VStack h="100%">
+      <VStack h="100%" spacing="px">
         <Text fontSize="sm">Gas:</Text>
-        <HStack h="100%">
-          <Slider
-            orientation="vertical"
-            size="lg"
-            isReadOnly={true}
-            focusThumbOnChange={false}
-            min={0}
-            max={1}
-            value={telemetry.CarDirectives.gas}
-          >
-            <SliderTrack>
-              <SliderFilledTrack />
-            </SliderTrack>
-          </Slider>
-          <Slider
-            orientation="vertical"
-            size="lg"
-            isReadOnly={true}
-            focusThumbOnChange={false}
-            min={0}
-            max={1}
-            value={-telemetry.CarDirectives.gas}
-          >
-            <SliderTrack>
-              <SliderFilledTrack />
-            </SliderTrack>
-          </Slider>
-        </HStack>
+        <Slider
+          transform="scaleX(3)"
+          orientation="vertical"
+          size="lg"
+          isReadOnly={true}
+          focusThumbOnChange={false}
+          min={0}
+          max={1}
+          value={telemetry.CarDirectives.gas}
+        >
+          <SliderTrack>
+            <SliderFilledTrack />
+          </SliderTrack>
+        </Slider>
+        <Slider
+          transform="scaleX(3) rotate(180deg)"
+          orientation="vertical"
+          size="lg"
+          isReadOnly={true}
+          focusThumbOnChange={false}
+          min={0}
+          max={1}
+          value={-telemetry.CarDirectives.gas}
+        >
+          <SliderTrack>
+            <SliderFilledTrack />
+          </SliderTrack>
+        </Slider>
       </VStack>
     </Box>
     <ControlStick
