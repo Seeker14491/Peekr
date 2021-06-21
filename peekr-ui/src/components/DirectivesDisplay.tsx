@@ -44,19 +44,34 @@ export const DirectivesDisplay = ({ telemetry }: { telemetry: Telemetry }) => (
     <Box alignSelf="stretch">
       <VStack h="100%">
         <Text fontSize="sm">Gas:</Text>
-        <Slider
-          orientation="vertical"
-          size="lg"
-          isReadOnly={true}
-          focusThumbOnChange={false}
-          min={-1}
-          max={1}
-          value={telemetry.CarDirectives.gas}
-        >
-          <SliderTrack>
-            <SliderFilledTrack />
-          </SliderTrack>
-        </Slider>
+        <HStack h="100%">
+          <Slider
+            orientation="vertical"
+            size="lg"
+            isReadOnly={true}
+            focusThumbOnChange={false}
+            min={0}
+            max={1}
+            value={telemetry.CarDirectives.gas}
+          >
+            <SliderTrack>
+              <SliderFilledTrack />
+            </SliderTrack>
+          </Slider>
+          <Slider
+            orientation="vertical"
+            size="lg"
+            isReadOnly={true}
+            focusThumbOnChange={false}
+            min={0}
+            max={1}
+            value={-telemetry.CarDirectives.gas}
+          >
+            <SliderTrack>
+              <SliderFilledTrack />
+            </SliderTrack>
+          </Slider>
+        </HStack>
       </VStack>
     </Box>
     <ControlStick
