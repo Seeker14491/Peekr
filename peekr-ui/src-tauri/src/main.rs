@@ -4,24 +4,17 @@
 )]
 
 use parking_lot::Mutex;
-use peekr_core::{CarDirectives, Message, TelemetryReceiver};
-use std::mem;
+use peekr_core::{CarDirectives, TelemetryReceiver};
 
 struct State {
     telemetry: TelemetryReceiver,
-    msg_buffer: Vec<Message>,
-    msg_number: i64,
 }
 
 type TelemetryJson = String;
 
 fn main() {
-    let telemetry = TelemetryReceiver::new(19545, 100).expect("TODO");
-    let state = State {
-        telemetry,
-        msg_buffer: Vec::with_capacity(100),
-        msg_number: 0,
-    };
+    let telemetry = TelemetryReceiver::init(19545).expect("TODO");
+    let state = State { telemetry };
 
     tauri::Builder::default()
         .manage(Mutex::new(state))
@@ -35,19 +28,11 @@ fn main() {
 
 #[tauri::command]
 fn poll_telemetry(state: tauri::State<Mutex<State>>) -> Option<TelemetryJson> {
-    let mut state = state.lock();
-    let mut msg_buffer = mem::take(&mut state.msg_buffer);
-    let prev_msg_number = state.msg_number;
-    let (msg_number, _skipped) = state
-        .telemetry
-        .get_pending(&mut msg_buffer, prev_msg_number);
-    state.msg_buffer = msg_buffer;
-    state.msg_number = msg_number;
-
     state
-        .msg_buffer
-        .get_mut(0)
-        .map(|msg| mem::take(&mut msg.telemetry_json))
+        .lock()
+        .telemetry
+        .get_last_message()
+        .map(|message| message.telemetry_json)
 }
 
 #[tauri::command]
