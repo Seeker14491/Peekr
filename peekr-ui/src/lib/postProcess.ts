@@ -1,6 +1,6 @@
-import { invoke } from "@tauri-apps/api/tauri";
-import { CarDirectives, Telemetry } from "./telemetry";
-import { RawTelemetry } from "./get";
+import { invoke } from "./tauri";
+import type { CarDirectives, Telemetry } from "./telemetry";
+import type { RawTelemetry } from "./get";
 
 export const postProcessTelemetry = async (
   rawTelemetry: RawTelemetry
@@ -17,5 +17,5 @@ export const postProcessTelemetry = async (
 };
 
 const decodeCarDirectives = (bits: number): Promise<CarDirectives> => {
-  return invoke<CarDirectives>("decode_car_directives", { bits });
+  return invoke("decode_car_directives", { bits });
 };

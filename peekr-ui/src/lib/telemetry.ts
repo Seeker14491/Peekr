@@ -1,4 +1,5 @@
-import { pollTelemetry, RawTelemetry } from "./get";
+import type { RawTelemetry } from "./get";
+import { pollTelemetry } from "./get";
 import { postProcessTelemetry } from "./postProcess";
 
 export interface Telemetry extends Omit<RawTelemetry, "CarDirectivesBits"> {

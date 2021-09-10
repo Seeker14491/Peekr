@@ -30,7 +30,7 @@ Once the plugin is installed you can run the app which will show data once you'r
 
 ## Architecture
 
-The game plugin continually collects telemetry from the running game and sends it over UDP as JSON to the GUI application. The GUI is implemented with [React](https://reactjs.org/) + [Tauri](https://tauri.studio/).
+The game plugin continually collects telemetry from the running game and sends it over UDP as JSON to the GUI application. The GUI is implemented with [SvelteKit](https://kit.svelte.dev/) + [Tauri](https://tauri.studio/).
 
 ## Building the plugin
 
@@ -54,6 +54,8 @@ yarn tauri build
 ```
 
 The build output will be in the `peekr-ui/src-tauri/target/release` directory.
+
+Alternatively, the script `windows_tiny_build.ps1` in the `peekr-ui` folder can be used to build for windows, making use of a few extra tricks to get a smaller binary size. It requires [UPX](https://upx.github.io/) being available on the command line.
 
 ## Credits
 
