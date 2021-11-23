@@ -10,7 +10,7 @@ For the app to work, it requires a plugin to be installed in Distance.
 
 ## Download
 
-**Prerequisite on Windows:** [WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703)
+**Prerequisite if you're on Windows 10 or earlier:** [WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703)
 
 Download the latest version from [the releases page](https://github.com/Seeker14491/Peekr/releases). Only a Windows x64 build is provided for now, though the code is cross-platform.
 
