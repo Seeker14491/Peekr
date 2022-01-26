@@ -1,6 +1,6 @@
-import { invoke } from "./tauri";
 import type { CarDirectives, Telemetry } from "./telemetry";
 import type { RawTelemetry } from "./get";
+import { invoke } from "@tauri-apps/api/tauri";
 
 export const postProcessTelemetry = async (
   rawTelemetry: RawTelemetry

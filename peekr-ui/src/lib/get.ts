@@ -1,5 +1,5 @@
-import { invoke } from "./tauri";
 import { Codec, number, boolean, GetType } from "purify-ts";
+import { invoke } from "@tauri-apps/api/tauri";
 
 const RawTelemetry = Codec.interface({
   CarDirectivesBits: number,
@@ -12,7 +12,7 @@ export type RawTelemetry = GetType<typeof RawTelemetry>;
 export const pollTelemetry = async (): Promise<RawTelemetry | null> => {
   const jsonString = await invoke("poll_telemetry");
 
-  if (jsonString == null) {
+  if (typeof jsonString !== "string") {
     return null;
   }
 
