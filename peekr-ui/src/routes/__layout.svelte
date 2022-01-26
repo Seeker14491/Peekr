@@ -1,8 +1,11 @@
 <script lang="ts">
   import "../app.postcss";
   import { onMount } from "svelte";
+  import { appWindow } from "@tauri-apps/api/window";
 
   let resizeObserverElement;
+
+  appWindow.setAlwaysOnTop(true);
 
   onMount(() => {
     const setUpAutoResize = async () => {
