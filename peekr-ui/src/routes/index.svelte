@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { getTelemetry, Telemetry } from "$lib/telemetry";
+  import { getTelemetry, Telemetry, defaultTelemetry } from "$lib/telemetry";
   import { onMount } from "svelte";
   import DirectivesDisplay from "../components/DirectivesDisplay.svelte";
 
-  let telemetry: Telemetry;
+  let telemetry = defaultTelemetry;
 
   onMount(() => {
     let frame;
@@ -23,10 +23,6 @@
   });
 </script>
 
-{#if telemetry != null}
-  <div class="px-3 py-1">
-    <DirectivesDisplay {telemetry} />
-  </div>
-{:else}
-  <div class="w-max p-2">No data received yet</div>
-{/if}
+<div class="px-3 py-1">
+  <DirectivesDisplay {telemetry} />
+</div>
