@@ -8,12 +8,8 @@ export const postProcessTelemetry = async (
   const carDirectivesDecoded = await decodeCarDirectives(
     rawTelemetry.CarDirectivesBits
   );
-  const tmp = rawTelemetry as any;
-  delete tmp.CarDirectivesBits;
-  const telemetry: Telemetry = tmp;
-  telemetry.CarDirectives = carDirectivesDecoded;
-
-  return telemetry;
+  const { CarDirectivesBits: _, ...data } = rawTelemetry;
+  return { CarDirectives: carDirectivesDecoded, ...data };
 };
 
 const decodeCarDirectives = (bits: number): Promise<CarDirectives> => {
