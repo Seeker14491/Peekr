@@ -19,10 +19,9 @@
   style={`width:${backdropSize}px;height:${backdropSize}px`}
 >
   <div
-    class="bg-gray-500 relative rounded-full"
+    class="bg-gray-500 relative rounded-full will-change-transform"
     style={`width:${stickSize}px;\
       height:${stickSize}px;\
-      will-change:transform;\
       transform:translate(${stickOffsets[0]}px,${stickOffsets[1]}px)`}
   />
 </div>

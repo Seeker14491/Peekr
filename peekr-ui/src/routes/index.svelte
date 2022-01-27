@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getTelemetry, Telemetry, defaultTelemetry } from "$lib/telemetry";
+  import { getTelemetry, defaultTelemetry } from "$lib/telemetry";
   import { onMount } from "svelte";
   import DirectivesDisplay from "../components/DirectivesDisplay.svelte";
 
