@@ -37,7 +37,7 @@
   });
 </script>
 
-<div class="h-screen flex justify-center items-center bg-gray-900 text-white">
+<div class="flex h-screen items-center justify-center bg-gray-900 text-white">
   <div bind:this={resizeObserverElement}>
     <slot />
   </div>

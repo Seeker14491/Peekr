@@ -7,10 +7,10 @@
 
 <div class="grid">
   <div
-    class="row-start-1 col-start-1 z-10 border-white border-4"
+    class="z-10 col-start-1 row-start-1 border-4 border-white"
     style={`visibility:${visibility}`}
   />
-  <div class="row-start-1 col-start-1 border-gray-600 border-2 text-center p-1">
+  <div class="col-start-1 row-start-1 border-2 border-gray-600 p-1 text-center">
     {text}
   </div>
 </div>

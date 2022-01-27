@@ -15,11 +15,11 @@
 </script>
 
 <div
-  class="bg-gray-700 m-1 rounded-full"
+  class="m-1 rounded-full bg-gray-700"
   style={`width:${backdropSize}px;height:${backdropSize}px`}
 >
   <div
-    class="bg-gray-500 relative rounded-full will-change-transform"
+    class="relative rounded-full bg-gray-500 will-change-transform"
     style={`width:${stickSize}px;\
       height:${stickSize}px;\
       transform:translate(${stickOffsets[0]}px,${stickOffsets[1]}px)`}
